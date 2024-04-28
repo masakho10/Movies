@@ -1,22 +1,27 @@
+//Mouhamed Abdallah SAKHO
+//Sir I'm trying to improve my english while coding lol
+
+
 const db = require("../models");
 const Movie = db.movies; 
 
-  // Création d'un film
+  // Create a film
   const movie = new Movie({
     name: req.body.name,
     genre: req.body.genre,
     released: req.body.released ? req.body.released : false,
   });
 
-// Enregistrement d'un nouveau film
+// Save a film
 exports.create = (req, res) => {
-  // Valider la requête
+
+  // Validation
   if (!req.body.name) {
-    res.status(400).send({ message: "Le contenu ne peut pas être vide !" });
+    res.status(400).send({ message: "Can't be empty !" });
     return;
   }
 
-  // Enregistrement d'un film dans la BD
+  // Save a film in the database
   movie
     .save(movie)
     .then(data => {
@@ -24,12 +29,12 @@ exports.create = (req, res) => {
     })
     .catch(err => {
       res.status(500).send({
-        message: "Une erreur est survenue lors de la création du film.",
+        message: "Cannot create the film",
       });
     });
 };
 
-// Affichage de l'ensemble des films de la BD
+// Show films from database
 exports.findAll = (req, res) => {
   const name = req.query.name;
   let condition = name
@@ -41,28 +46,28 @@ exports.findAll = (req, res) => {
     })
     .catch(err => {
       res.status(500).send({
-        message: "Une erreur est survenue lors de la récupération des films.",
+        message: "Error",
       });
     });
 };
 
-// Affichage d'un film avec un ID donné
+//Find by ID
 exports.findOne = (req, res) => {
   const id = req.params.id;
   Movie.findById(id)
     .then(data => {
       if (!data)
-        res.status(404).send({ message: `Aucun film trouvé avec l'ID ${id}` });
+        res.status(404).send({ message: `No film ${id}` });
       else res.send(data);
     })
     .catch(err => {
       res
         .status(500)
-        .send({ message: `Erreur lors de la récupération du film d'ID ${id}` });
+        .send({ message: `No film with the ID ${id}` });
     });
 };
 
-// Trouver tous les films enregistrés
+// Show all the films
 exports.findAllReleased = (req, res) => {
   Movie.find({ released: true })
     .then(data => {
@@ -70,16 +75,16 @@ exports.findAllReleased = (req, res) => {
     })
     .catch(err => {
       res.status(500).send({
-        message: "Une erreur est survenue lors de la récupération des films.",
+        message: "Cannot show films",
       });
     });
 };
 
-// Mettre à jour un film avec l'ID spécifié dans la requête
+// Update with ID
 exports.update = (req, res) => {
   if (!req.body) {
     return res.status(400).send({
-      message: "Les données à mettre à jour ne peuvent pas être vides !",
+      message: "The data can't be empty!",
     });
   }
   const id = req.params.id;
@@ -87,50 +92,50 @@ exports.update = (req, res) => {
     .then(data => {
       if (!data) {
         res.status(404).send({
-          message: `Impossible de mettre à jour le film d'ID ${id}. Film introuvable !`,
+          message: `Cannot find a film with ID ${id}.`,
         });
-      } else res.send({ message: "Mise à jour réussie." });
+      } else res.send({ message: "Up to date" });
     })
     .catch(err => {
       res.status(500).send({
-        message: `Erreur lors de la mise à jour du film ${id}`,
+        message: `Error while updating ${id}`,
       });
     });
 };
 
-// Suppression de tous les films de la BD
+// Delete
 exports.deleteAll = (req, res) => {
   Movie.deleteMany({})
     .then(data => {
       res.send({
-        message: `${data.deletedCount} films ont été supprimés avec succès !`,
+        message: `${data.deletedCount} films have been deleted successfuly`,
       });
     })
     .catch(err => {
       res.status(500).send({
-        message: "Une erreur est survenue lors de la suppression des films.",
+        message: "Error while deleting",
       });
     });
 };
 
-// Suppression d'un film de la BD
+// Delete a film from the database
 exports.delete = (req, res) => {
   const id = req.params.id;
   Movie.findByIdAndDelete(id)
     .then(data => {
       if (!data) {
         res.status(404).send({
-          message: `Impossible de supprimer le film avec l'ID ${id}.`,
+          message: `Can't delete the film ${id}.`,
         });
       } else {
         res.send({
-          message: "Film supprimé avec succès !",
+          message: "The film has been deleted succesfully !",
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: `Suppression impossible.`,
+        message: `Can't delete the film`,
       });
     });
 };
