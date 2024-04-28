@@ -1,9 +1,12 @@
+//Mouhamed Abdallah SAKHO
+
 module.exports = mongoose => {
     var schema = mongoose.Schema(
         {
             id: Number,
             title: String,
-            release: Number
+            release: Number,
+            synopsis: String
         }
     );
   
