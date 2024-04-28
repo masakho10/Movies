@@ -1,42 +1,35 @@
 [
   {
     "id": 1,
-    "title": "Hosties Noires",
-    "release": 2020
+    "title": "Tarzan",
+    "release": 1999,
+    "synopsis": "Recueilli et adopté tout bébé par un clan de gorilles, Tarzan développe un instinct aussi sûr que celui des animaux sauvages. Ses aptitudes physiques et son intelligence lui permettent de prendre une place à part dans le royaume de la jungle. Quand il rencontre le professeur Porter et sa fille Jane, en expédition scientifique dans la jungle, Tarzan découvre qu'il existe d'autres êtres semblables à lui. Il devra bientôt faire un choix entre sa famille d'adoption et ses ascendances humaines."
   },
   {
     "id": 2,
-    "title": "Identity",
-    "release": 1998
+    "title": "Les freres ours",
+    "release": 2003,
+    "synopsis": "Avide de vengeance, Kenai, un jeune Indien se lance à la poursuite du grizzly qui a tué son frère. Cependant, alors qu'il achève l'animal, le ciel s'ouvre et les esprits de la forêt, furieux, métamorphosent Kenai en ours. Pour retrouver sa forme humaine, il va lui falloir accomplir un voyage initiatique jusqu'à la montagne sacrée, là où la lumière touche la terre."
   },
   {
     "id": 3,
-    "title": "Harry Potter",
-    "release": 1997
+    "title": "Les freres ours 2" ,
+    "release": 2006,
+    "synopsis": "Alors qu'il était encore un petit garçon, Kenai avait scellé son amitié avec la jeune Nita en lui offrant un médaillon. Les années ont passé, et la fillette est maintenant en âge de prendre un époux. Cependant, selon une légende ancestrale, le cadeau de Kenai, devenu un ours, lui interdit le mariage. Pour briser le sortilège qui le lie à Kenai, Nita part à la recherche de son ami d'enfance pour lui rendre ce médaillon bien encombrant."
   },
+
   {
     "id": 4,
-    "title": "La Faille",
-    "release": 2003
+    "title": "Hercule" ,
+    "release": 1997,
+    "synopsis": "Dans la Grèce antique, alors que la fête bat son plein et que les fées se penchent sur le berceau d'Hercule, fils de Zeus, Hadès, seigneur des enfers, ronge son frein. En consultant les Moires, il apprend que les planètes lui seront favorables dans dix-huit ans. Pour gouverner l'Olympe, il lui suffira de libérer les Titans, jadis emprisonnés par Zeus, après avoir éliminé le seul dieu capable de le tenir en échec : Hercule."
   },
+
   {
     "id": 5,
-    "title": "Dracula",
-    "release": 2019
-  },
-  {
-    "id": 6,
-    "title": "Champ écarlate",
-    "release": 1975
-  },
-  {
-    "id": 7,
-    "title": "Hosties Noires",
-    "release": 2020
-  },
-  {
-    "id": 8,
-    "title": "Legende d'Automne",
-    "release": 1987
+    "title": "Tarzan 2",
+    "release": 2005,
+    "synopsis": "Alors qu'il grandit aux côtés de Tok et Tantor, Tarzan, petit enfant-Homme maladroit, essaie en vain de devenir un singe parfait. Un jour, sa mère Kala est blessée par sa faute, et Tarzan décide alors de s'enfuir pour ne pas causer plus de torts à sa famille. Seul dans la jungle sauvage et menaçante, il rencontre de nouveaux personnages dont le mystérieux Zugor, qui terrifie la jungle."
   }
+
 ]
