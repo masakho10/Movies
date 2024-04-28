@@ -1,27 +1,29 @@
+//Mouhamed Abdallah SAKHO
+
 module.exports = app => {
     app.use("/api/movies", router);
   };
   const movies = require("../controllers/controllers.js");
   let router = require("express").Router();
   
-  // Créer un nouveau film
+  // Create a new movies
   router.post("/", movies.create);
   
-  // Récupérer tous les films
+  // Retrieve all movies
   router.get("/", movies.findAll);
   
-  // Supprimer un film par son ID
+  //delete movie by ID
   router.delete("/:id", movies.delete);
   
-  // Supprimer tous les films
+  // Delete all movies
   router.delete("/", movies.deleteAll);
   
-  // Récupérer tous les films enregistrés
+  // Recover all recorded movies
   router.get("/released", movies.findAllReleased);
   
-  // Récupérer un film avec un ID spécifique
+  // Recover all recorded movies with ID
   router.get("/:id", movies.findOne);
   
-  // Mettre à jour un film avec un ID spécifique
+  // Update a film with a specific ID
   router.put("/:id", movies.update);
   
