@@ -1,17 +1,23 @@
 //Mouhamed Abdallah SAKHO
 
-const dbConfig = require("../config/db.config.js");
+module.exports = mongoose => {
+    var schema = mongoose.Schema(
+        {
+            id: Number,
+            title: String,
+            release: Number,
+            synopsis: String
+        }
+    );
+  
+    schema.method("toJSON", function () {
+        const { __v, _id, ...object } = this.toObject();
+        object.id = _id;
+        return object;
+    });
+  
+    const Movie = mongoose.model("movie", schema);
+    return Movie;
+};
 
-const mongoose = require("mongoose");
-
-mongoose.Promise = global.Promise;
-
-const db = {};
-
-db.mongoose = mongoose;
-
-db.url = dbConfig.url;
-
-db.movies = require("./movies.model.js")(mongoose);
-
-module.exports = db;
+  
